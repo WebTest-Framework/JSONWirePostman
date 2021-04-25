@@ -11,7 +11,8 @@
 		"e757c7a4-5de0-1c3a-e1e0-59feebf02aee",
 		"8c9f21ae-6468-8b51-567b-c67065d4ff3c",
 		"248cf12b-b8a1-2b32-6b27-9b46add97c7b",
-		"7064eaa8-673f-a167-314c-05121624fe35"
+		"7064eaa8-673f-a167-314c-05121624fe35",
+		"d17682d5-570e-f44c-3365-cae31f9782bd"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -200,6 +201,36 @@
 			],
 			"url": "{{baseurl}}/{{sessionId}}/url",
 			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619325726262,
+			"name": "Launch URL",
+			"description": "",
+			"collectionId": "1a811b9d-f9c3-4ef5-988c-1d2541e006da",
+			"responses": [],
+			"rawModeData": "{ \n\t\"url\": \"https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html\"\n}"
+		},
+		{
+			"id": "d17682d5-570e-f44c-3365-cae31f9782bd",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{baseurl}}/{{sessionId}}/element/{{currentElement}}/click",
+			"queryParams": [],
 			"pathVariables": {},
 			"pathVariableData": [],
 			"preRequestScript": null,
@@ -207,16 +238,16 @@
 			"collectionId": "1a811b9d-f9c3-4ef5-988c-1d2541e006da",
 			"data": [],
 			"dataMode": "raw",
-			"name": "Launch URL",
+			"name": "Select by visible text",
 			"description": "",
 			"descriptionFormat": "html",
-			"time": 1618836887698,
+			"time": 1619279248164,
 			"version": 2,
 			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"rawModeData": "{ \n\t\"url\": \"https://www.google.com\"\n}"
+			"rawModeData": "{\n\t\"LEFT\": 0\n}"
 		},
 		{
 			"id": "e757c7a4-5de0-1c3a-e1e0-59feebf02aee",
@@ -272,12 +303,12 @@
 			"tests": "var response = JSON.parse(responseBody);\nvar elementList = Object.keys(response.value[0]);\nif(elementList.length > 1) {\n    throw new Error(\"More than 1 element found\");\n} else if(elementList.length === 0) {\n    throw new Error(\"No element found\");\n} else {\n    postman.setEnvironmentVariable(\"currentElement\", response.value[0][elementList[0]])\n}",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1618838848624,
+			"time": 1619325731437,
 			"name": "Find elements using XPath",
 			"description": "",
 			"collectionId": "1a811b9d-f9c3-4ef5-988c-1d2541e006da",
 			"responses": [],
-			"rawModeData": "{ \n\t\"using\": \"xpath\", \n\t\"value\": \"//*[@class='gLFyf gsfi']\"\n}"
+			"rawModeData": "{ \n\t\"using\": \"xpath\", \n\t\"value\": \"//*[@id='select-demo']/option[text()='Sunday']\"\n}"
 		}
 	]
 }
